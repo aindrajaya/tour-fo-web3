@@ -1,0 +1,11 @@
+{
+  "name": "tour-fo-web3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/aindrajaya/tour-fo-web3.git",
+  "author": "Arista Indrajaya <arista.indrajaya@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "hardhat": "^2.8.3"
+  }
+}
