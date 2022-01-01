@@ -65,6 +65,7 @@ I firmly believe that the best way to become good at anything is to do said thin
 ============================
 
 ## Getting our feet Wet
+==
 1. Your First Contract
 ### First Contract using Hardhat
 ```bash
@@ -89,7 +90,53 @@ your-project
     - sometest.js
     ...
 ```
+Create first contract, create a file in contracts folder named HelloContract.sol. And the `.sol` is mean that solidity, which is the programming language that used for developing smart contract in Ethereum. For the file contract is up to you, you can name it as you want, because the name file of your contract has no meaning on how its compile as long as it ends with .sol.
+First thing that you need to do when you write solidity file is you need to tell the compiler that used to compile your contract, because you need to tell the solidity what the compiler that you need to expect run or compile your contract. And then you write `pragma`, it's just kind of precompile command. You can write this one: 
+```sol
+//Code 1
+pragma solidity ^0.8.0;
+```
+It means that you expect at least this version of compiler will run/compiler your contract, just same thing when you write the version of the libraries on the `package.json`. And then the next one you also define the name contract, it's just same structure code when we write a class in javascript. The code will be like this:
+```sol
+pragma solidity ^0.8.0;
+
+//Code 2
+contract HelloContract {
+
+}
+```
+For the code that we wrote before. The simply explanation about it, the code is just like a state container with some function to mutate it (we will write later), and it's just like a class, it also has the constructor that only execute only once when you deploy the contract (or one time executed). The next code, you can add this:
+```sol
+pragma solidity ^0.8.0;
+
+contract HelloContract {
+  function hello() public pure returns(string memory){
+    return "Hello, World";
+  }
+}
+```
+Seem familiar with these line of codes? For sure, it's the first code that usually write when we learning a new programming language, and this is the Solidity should be write when declare `Hello World` thing, because Solidity has their own style. But if you feel confused for another command, that's okay, maybe you're not familiar with the command `pure` and `memory`, and that's the differences (we will discuss later).
+Notes Code Explanation (without pure and memory): the line codes means, a `hello()` function hanging out the `HelloContract` contract, the `public` means anyone can call it, and `returns` to `string` and the "Hello, World" is the string that we expect to return.
+Ooops, I think we forget to add license version of our contract. You can add here:
+```sol
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.0;
+
+contract HelloContract {
+  function hello() public pure returns(string memory){
+    return "Hello, World";
+  }
+}
+```
+What's the reason? it just make us, as the developer can identifier specific license that used in our solidity file. The complete explanation you can se [here](https://forum.openzeppelin.com/t/solidity-0-6-8-introduces-spdx-license-identifiers/2859)
+Okay, the next one we should compile our contract, so we can now what's happen. Write this command to your command line interface:
+```bash
+npx hardhat compile
+```
+==
 2. Terminology
+
+==
 3. Solidity Language Basics
 ============================
 
