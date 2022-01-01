@@ -9,6 +9,9 @@ describe("Hello test", () => {
     const OurContract = await ethers.getContractFactory("HelloContract");
 
     //2. Deploy our contract using deploy and deployed function from nomiclabs/hardhat-ethers
+    const DeployContract = await OurContract.deploy();
+    await DeployContract.deployed();
+
     //3. Call our functions to test    
   })
 })
