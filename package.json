@@ -5,6 +5,9 @@
   "repository": "https://github.com/aindrajaya/tour-of-web3.git",
   "author": "Arista Indrajaya <arista.indrajaya@gmail.com>",
   "license": "MIT",
+  "scripts": {
+    "test": "node index.ts && npx hardhat run scripts/deploy-contract.ts --network localhost"
+  },
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.4",
     "@nomiclabs/hardhat-waffle": "^2.0.2",
