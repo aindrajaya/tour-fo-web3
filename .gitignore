@@ -7,3 +7,7 @@ package-lock.json
 
 ## error log
 yarn-error.log
+
+## Unused
+artifacts
+cache
