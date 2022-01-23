@@ -13,6 +13,6 @@ describe("Hello test", () => {
     await DeployContract.deployed();
 
     //3. Call our functions to test    
-    expect(await DeployContract.hello()).to.equal("Hello, World");
+    expect(await DeployContract.hello()).to.equal("Hello, World from Web3");
   })
 })
