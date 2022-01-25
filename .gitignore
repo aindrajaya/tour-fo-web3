@@ -12,3 +12,6 @@ yarn-error.log
 artifacts
 cache
 build
+
+## ENV FIle
+.env
