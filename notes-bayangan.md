@@ -439,6 +439,7 @@ Here's the fully tutorial about fundamental blockchain development, and I also d
 --> Web3: In general means blockchain tech with some purpose
 --> Ethereum: The blockchain we will we be developing with
 --> Provider/Metamask: Form Ethers docs: "A Provider abstracts a connection to the Ethereum blockchain, for issuing queries and sending state changing transactions". (Kind of the pipe that will send your request to a certain network (wherever it does, because the provider know where to send your request) and then return the result that you needs. In this case, we send the metamask objet and then we request the data information about hello() function from ether protocol to show hello, world the results of hello() function.
+Meaning that ethers does not know where your network is, it effectively needs the pipe.
 --> Contract: This is code written in Solidity that has been compiled and deployed onto a network. It has an address that is no different than a wallet address. (Contract has an address that identically same with the wallet address)
 --> Wallet: The blockchain, its a private + public key combo (really you just need a private key)
 --> BTW: The ability to tell someone that you know something that they likely don't, or you use some obscure technology.
