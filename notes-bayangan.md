@@ -1,4 +1,6 @@
 # A TOUR OF WEB3'S ETHEREUM
+[New Link](https://theprimeagen.github.io/web3-smart-contracts/)
+**Build something fail, get better, learn why and slowly build over time**
 -------------------------
 # TABLE OF CONTENTS
 The sort of comprehensive tour of the atheneums blockchain
@@ -439,6 +441,7 @@ Here's the fully tutorial about fundamental blockchain development, and I also d
 --> Web3: In general means blockchain tech with some purpose
 --> Ethereum: The blockchain we will we be developing with
 --> Provider/Metamask: Form Ethers docs: "A Provider abstracts a connection to the Ethereum blockchain, for issuing queries and sending state changing transactions". (Kind of the pipe that will send your request to a certain network (wherever it does, because the provider know where to send your request) and then return the result that you needs. In this case, we send the metamask objet and then we request the data information about hello() function from ether protocol to show hello, world the results of hello() function.
+Meaning that ethers does not know where your network is, it effectively needs the pipe.
 --> Contract: This is code written in Solidity that has been compiled and deployed onto a network. It has an address that is no different than a wallet address. (Contract has an address that identically same with the wallet address)
 --> Wallet: The blockchain, its a private + public key combo (really you just need a private key)
 --> BTW: The ability to tell someone that you know something that they likely don't, or you use some obscure technology.
@@ -448,8 +451,73 @@ Here's the fully tutorial about fundamental blockchain development, and I also d
 --> hardhat: its a backbone of any project these days. It provides compiling, testing, and deployment support. When you write get a `getContractFactory("HelloWorld")` it actually just loads the file from the json build file.
 --> Metamask: its a browser plugin for wallets.
 You will notice that in the code on the web I don't reference hardhat, because hardhat is a library (Hardhat purely on the infrastructure side).
+Difference Web3.js and ethers.js -> Web3 has more functionality, and ethers (just like jQuerye) is really simple.
 ==
 3. Solidity Language Basics
+Solidity
+If you are famillar with C based language, it will be a breeze.
+* IF
+```sol
+if(<boolean expr produce true/false>){
+  conditionals
+} else if(...){
+  second conditionals
+} else {
+  //return error
+}
+```
+* LOOPS
+``sol
+for(uint i = 0; i < 10; i++){
+  ...return something that looped
+}
+```
+* CONTRACTRS
+```sol
+contract Name{
+  ...
+  constructor(){
+    //I am called once at contract deploy
+  }
+
+  function name() scope returns(type){
+    ...
+  }
+}
+```
+* SIMPLE TYPES
+uint = 256 bit number, uint8. uint16, uint32..., The base types of the Solidity is a 256 bit number. 
+Strings is suck, so don't do them. Explanation, That's the general rula of thum is that unless if you have a bunch of hard coded ones, you're gonna construct some sort of output with, working with string is painful because the base type is 256 bit number, so we're kind of mashing strings into these number representations.
+It will be good if we can avoid string in the things I've written every single time except for meta information generation by simply just concatenate a bunch of stuff together that are hard coded strings and pulling out data.
+  - Arrays: There are dynamic and static
+```sol
+contract Foo {
+  uint[] foo; //Hello I am dynamic, if you specify array on the contract as a member, it's a dynamic array.
+  function foofoo() public view{
+    uint[] fooo = new uint[](10); //I am fixed array, if you specify an array inside the function, you specicy is a fizxed array. And you cannot inline generate an array right now
+  }
+}
+```
+  - Maps: these much different. You cannot iterate. It's different that's different from what you're used to, it's a mapping, not necesarilty a map, a map stoers keys and values. Mapping do not stores keys, and they technically don't even store values.
+```sol
+contract Foo{
+  mapping(uint => address[]) mymap;
+  //Explanation, you do a mapping from type to type and the type can even be a complex type (array[]), and it will do some super special magic underneath the hood, and it will be able to store that but you cannot for each over keys, and you cannot for each over values. You don't even know how many items are inside of your map because it's actually just simply a mathematical function that gets executed. (for now, keep it that way)
+}
+```
+  - Structs: just like on c, you can create a mapping to a mapping that is uint to array. So there is no, you can do all the standard mixes you'd like. There also enums.
+```sol
+struct Foo{
+  uint a;
+  uint b;
+  uint c;
+}
+mapping(uint => Foo) mymap;
+Foo[] myarr;
+```
+QA
+ - Why does Solidity exist? Why couldn't they have just made a librarty from Python or another language? 
+ ANS: With Solidity, we see pretty much all the problems you've ever wanted have all ready been solved, and it works very wel lfor what they want. And when you break into inlie assembly, it works very, very well.
 ============================
 
 ## Solidity Fundamentals
